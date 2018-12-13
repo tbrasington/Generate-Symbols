@@ -61,25 +61,81 @@ export default function(context) {
           parent : context.document.currentPage() // add to symbols page
       })
   });
+}
 
 
-  //symbolList.forEach(item=> {})
-    // if(item.name==="core/input/default"){
-  
-    //   let instance = item.createNewInstance()
+// text input structures
+const IDEA_1_input = [
 
-    //   var group = new sketch.Group({
-    //     name: 'my name',
-    //     parent :  context.document.currentPage(),
-    //     layers: [
-    //       instance
-    //     ],
-    //   })
-    // }
+  {
+    name : "Input text", 
+    layers : [{
+      element : "field",
+      variations : ['default', 'hover', 'focus', 'error', 'success'],
+      frame : { x: 0, y: 0, width: 100, height: { bp1: 44, bp3 : 40 }}
+    } ]
+  },
 
-  // var master = new SymbolMaster({
-  //   name: 'my symbol master',
-  // })
+  {
+    name : "Label + Input text", 
+    layers : [
+      {
+        element : "label",
+        variations : "default",
+        frame : { x: 0, y: 0, width: 100}
+      },
+      {
+        element : "field",
+        variations : ['default', 'hover', 'focus', 'error', 'success'],
+        frame : { x: 0, y: 0, width: 100, height: { bp1: 44, bp3 : 40 }}
+    }] 
+  }
+];
 
-  //createNewInstance
+const IDEA_2_input = [
+  {
+    name: "default",
+    ...elementsAndVariations
+  },
+  {
+    name: "focus",
+          
+  },
+  {
+    name: "hover",
+          
+  },
+  {
+    name: "error",
+          
+  },
+  {
+    name: "success",
+          
+  }
+]
+
+const IDEA_3_input = {
+
+    masterFrame : [
+      {
+        element : "label",
+        frame : { x: 0, y: 0, width: 100}
+      },
+      {
+        element : "field",
+        frame : { x: 0, y: 20, width: 100, height: { bp1: 44, bp3 : 40 }}
+      },
+      {
+        element : "value",
+        frame : { x: 0, y: 30, width: 100}
+      },
+      {
+        element : "message",
+        frame : { x: 0, y: { bp1: 64, bp3 : 60 }, width: 100}
+      }
+    ],
+    configs : [
+
+    ]
 }
