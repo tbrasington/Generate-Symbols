@@ -1,0 +1,25 @@
+{
+  "name": "generate-symbols",
+  "version": "0.1.0",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "Generate Symbols",
+    "manifest": "src/manifest.json",
+    "main": "generate-symbols.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.11"
+  },
+  "author": "Thomas Brasington <tbrasington@gmail.com>"
+}
